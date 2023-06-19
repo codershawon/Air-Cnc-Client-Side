@@ -54,7 +54,7 @@ const AddRoomForm = ({
               </label>
               <DateRange
                 onChange={handleDates}
-                // ranges={[dates]}
+                ranges={[dates]}
                 rangeColors={['#F43F5E']}
               />
             </div>
