@@ -1,4 +1,4 @@
-const RoomInfo = () => {
+const RoomInfo = ({roomData}) => {
     return (
       <div className='col-span-4 flex flex-col gap-8'>
         <div className='flex flex-col gap-2'>
@@ -12,14 +12,14 @@ const RoomInfo = () => {
                 gap-2
               '
           >
-            <div>Hosted by Veluvana</div>
+            <div>Hosted by {roomData.host.name}</div>
   
             <img
               className='rounded-full'
               height='30'
               width='30'
               alt='Avatar'
-              src='https://a0.muscache.com/im/pictures/user/bb9ba580-9b3b-4402-ac92-3976abe1a178.jpg'
+              src={roomData.host.image}
             />
           </div>
           <div
@@ -32,9 +32,9 @@ const RoomInfo = () => {
                 text-neutral-500
               '
           >
-            <div>5 guests</div>
-            <div>3 rooms</div>
-            <div>2 bathrooms</div>
+            <div>{roomData.guests} guests</div>
+            <div>{roomData.bedrooms} rooms</div>
+            <div>{roomData.bathrooms} bathrooms</div>
           </div>
         </div>
   
@@ -43,12 +43,7 @@ const RoomInfo = () => {
           className='
           text-lg font-light text-neutral-500'
         >
-          Veluvana is a unique bamboo house with a wonderful view of Sidemen
-          Valley, a genuine tropical landscape with Mount Agung peak on its back.
-          This getaway spot is a great place to bring into reality the dream
-          adventure of the true wanderer. We invite you to feel the magnificent
-          vibes of the entire house to escape the life that is full of drama into
-          a journey with ultimate joy.
+          {roomData.description}
         </div>
         <hr />
       </div>
